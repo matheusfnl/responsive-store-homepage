@@ -1,30 +1,32 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <Header />
+
+    <div class="header-spacement">
+      <router-view class="header-spacement"/>
+    </div>
+
+    <Footer />
+  </div>
 </template>
 
+<script setup>
+  import "primevue/resources/themes/lara-light-indigo/theme.css";
+  import 'primeicons/primeicons.css';
+  import Header from '@/components/Header.vue';
+  import Footer from '@/components/Footer.vue';
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
 
-nav {
-  padding: 30px;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', var(--font-family), sans-serif;
+  }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  .header-spacement {
+    margin-top: 60px;
+  }
 </style>
